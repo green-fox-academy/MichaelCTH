@@ -1,8 +1,8 @@
 class Sharpie {
-    constructor(color, width) {
+    constructor(color, width, inkAmount = 100) {
         this.color = color;
         this.width = width;
-        this.inkAmount = 100;
+        this.inkAmount = inkAmount;
     }
 
     use() {
@@ -10,7 +10,9 @@ class Sharpie {
     }
 }
 
+module.exports = Sharpie;
+
 // examples
-s = new Sharpie('black', '10');
-s.use();
-console.log(s.inkAmount);
+// s = new Sharpie('black', '10');
+// s.use();
+// console.log(s.inkAmount);
