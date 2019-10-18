@@ -10,5 +10,5 @@ let l = 100;
 let w = 2;
 let h = 5;
 
-console.log(`Surface Area: ${l * w * 2 + w * h * 2 + h * l * 2}`);
+console.log(`Surface Area: ${2*(l * w + w * h + h * l)}`);
 console.log(`Volume: ${l * w * h}`);

@@ -44,11 +44,11 @@ console.log(h % 11 === 0);
 const i1 = 10;
 const i2 = 3;
 // tell if i1 is higher than i2 squared and smaller than i2 cubed (as a boolean)
-console.log(i1 > i2 ** 2 && i1 < i2 ** 3);
+console.log(i1 > (i2 ** 2) && i1 < (i2 ** 3));
 
 const j = 1521;
 // tell if j is dividable by 3 or 5 (as a boolean)
-console.log(j % 3 === 0 || j % 5 === 0);
+console.log((j % 3) === 0 || (j % 5) === 0);
 
 let k = "Apple";
 // fill the k variable with its content 4 times
