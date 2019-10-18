@@ -1,21 +1,21 @@
 let map = {
-    '978-1-60309-452-8': 'A Letter to Jo',
-    '978-1-60309-459-7': 'Lupus',
-    '978-1-60309-444-3': 'Red Panda and Moon Bear',
-    '978-1-60309-461-0': 'The Lab'
+	'978-1-60309-452-8': 'A Letter to Jo',
+	'978-1-60309-459-7': 'Lupus',
+	'978-1-60309-444-3': 'Red Panda and Moon Bear',
+	'978-1-60309-461-0': 'The Lab'
 };
 
 for (let k in map) {
-    console.log(`${map[k]} (ISBN: ${k})`);
+	console.log(`${map[k]} (ISBN: ${k})`);
 }
 
 delete map['978-1-60309-444-3'];
 console.log(map);
 
 for (let k in map) {
-    if (map[k] === 'The Lab') {
-        delete map[k];
-    }
+	if (map[k] === 'The Lab') {
+		delete map[k];
+	}
 }
 console.log(map);
 

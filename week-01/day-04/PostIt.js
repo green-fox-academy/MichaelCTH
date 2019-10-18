@@ -1,9 +1,9 @@
 class PostIt {
-    constructor(backgroundColor, text, textColor) {
-        this.backgroundColor = backgroundColor;
-        this.text = text;
-        this.textColor = textColor;
-    }
+	constructor(backgroundColor, text, textColor) {
+		this.backgroundColor = backgroundColor;
+		this.text = text;
+		this.textColor = textColor;
+	}
 }
 
 module.expoerts = PostIt;

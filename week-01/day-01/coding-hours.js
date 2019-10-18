@@ -12,5 +12,5 @@
 console.log("The total coding hour in the semester is " + (6 * 5 * 17));
 console.log(
   `The percentage of the coding hours in the semester is ${((6 * 5) / 52) *
-    100}%`
+  100}%`
 );

@@ -2,36 +2,36 @@ const Flower = require('./Flower');
 const Tree = require('./Tree');
 
 class Garden {
-    constructor() {
-        this.plants = [];
-    }
+	constructor() {
+		this.plants = [];
+	}
 
-    add(plant) {
-        this.plants.push(plant);
-    }
+	add(plant) {
+		this.plants.push(plant);
+	}
 
-    waterCheck(log = false) {
-        let needsNum = 0;
-        this.plants.forEach((item) => {
-            if (item.needsWater(log)) {
-                needsNum++;
-            }
-        });
+	waterCheck(log = false) {
+		let needsNum = 0;
+		this.plants.forEach((item) => {
+			if (item.needsWater(log)) {
+				needsNum++;
+			}
+		});
 
-        return needsNum;
-    }
+		return needsNum;
+	}
 
-    watering(waterAmount) {
-        let needsNum = this.waterCheck();
-        let eachNum = waterAmount / needsNum;
-        this.plants.forEach((item) => {
-            if (item.needsWater()) {
-                item.watering(eachNum);
-            }
-        });
+	watering(waterAmount) {
+		let needsNum = this.waterCheck();
+		let eachNum = waterAmount / needsNum;
+		this.plants.forEach((item) => {
+			if (item.needsWater()) {
+				item.watering(eachNum);
+			}
+		});
 
-        this.waterCheck(true);
-    }
+		this.waterCheck(true);
+	}
 }
 
 

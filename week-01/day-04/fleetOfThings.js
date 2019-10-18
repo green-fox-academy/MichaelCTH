@@ -21,29 +21,29 @@ const fleet = new Fleet();
 // Hint: You have to create a `print()` method as well
 class FleetOfThings {
 
-    print(fleet) {
-        fleet.forEach((item, idx) => {
-            let status = '[ ]';
-            if (item.getCompleted()) {
-                status = '[x]';
-            }
-            console.log(`${idx+1}. ${status} ${item.getName()}`);
-        });
-    }
+	print(fleet) {
+		fleet.forEach((item, idx) => {
+			let status = '[ ]';
+			if (item.getCompleted()) {
+				status = '[x]';
+			}
+			console.log(`${idx+1}. ${status} ${item.getName()}`);
+		});
+	}
 
-    main() {
-        let myFleet = new Fleet();
-        myFleet.add(new Thing('Get milk'));
-        myFleet.add(new Thing('Remove the obstacles'));
-        let thing1 = new Thing('Stand up');
-        thing1.complete();
-        myFleet.add(thing1);
-        let thing2 = new Thing('Eat lunch');
-        thing2.complete();
-        myFleet.add(thing2);
+	main() {
+		let myFleet = new Fleet();
+		myFleet.add(new Thing('Get milk'));
+		myFleet.add(new Thing('Remove the obstacles'));
+		let thing1 = new Thing('Stand up');
+		thing1.complete();
+		myFleet.add(thing1);
+		let thing2 = new Thing('Eat lunch');
+		thing2.complete();
+		myFleet.add(thing2);
 
-        this.print(myFleet.getThings());
-    }
+		this.print(myFleet.getThings());
+	}
 }
 
 // exmaples

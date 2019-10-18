@@ -1,21 +1,21 @@
 class Thing {
 
-    constructor(name) {
-        this.name = name;
-        this.completed = false;
-    }
+	constructor(name) {
+		this.name = name;
+		this.completed = false;
+	}
 
-    complete() {
-        this.completed = true;
-    }
+	complete() {
+		this.completed = true;
+	}
 
-    getName() {
-        return this.name;
-    }
+	getName() {
+		return this.name;
+	}
 
-    getCompleted() {
-        return this.completed;
-    }
+	getCompleted() {
+		return this.completed;
+	}
 }
 
 module.exports = Thing;

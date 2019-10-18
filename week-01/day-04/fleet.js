@@ -1,16 +1,16 @@
 class Fleet {
 
-    constructor() {
-        this.things = [];
-    }
+	constructor() {
+		this.things = [];
+	}
 
-    add(thing) {
-        this.things.push(thing);
-    }
+	add(thing) {
+		this.things.push(thing);
+	}
 
-    getThings() {
-        return this.things;
-    }
+	getThings() {
+		return this.things;
+	}
 }
 
 module.exports = Fleet;

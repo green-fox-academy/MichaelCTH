@@ -1,21 +1,21 @@
 const BlogPost = require('./BlogPost.js');
 
 class Blog {
-    constructor() {
-        this.blogList = [];
-    }
+	constructor() {
+		this.blogList = [];
+	}
 
-    add(blog) {
-        this.blogList.push(blog);
-    }
+	add(blog) {
+		this.blogList.push(blog);
+	}
 
-    delete(idx) {
-        this.blogList = this.blogList.splice(idx, 1);
-    }
+	delete(idx) {
+		this.blogList = this.blogList.splice(idx, 1);
+	}
 
-    update(idx, BlogPost) {
-        this.blogList[idx] = BlogPost;
-    }
+	update(idx, BlogPost) {
+		this.blogList[idx] = BlogPost;
+	}
 }
 
 // examples

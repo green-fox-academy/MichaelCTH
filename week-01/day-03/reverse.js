@@ -8,5 +8,5 @@ console.log(reverse(reversed));
 module.exports = reverse;
 
 function reverse(str) {
-    return str.split('').reverse().join('');
+	return str.split('').reverse().join('');
 }

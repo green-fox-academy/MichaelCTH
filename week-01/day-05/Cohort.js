@@ -4,23 +4,23 @@ const Person = require('./Person');
 const Sponsor = require('./Sponsor');
 
 class Cohort {
-    constructor(name) {
-        this.name = name;
-        this.students = [];
-        this.mentors = [];
-    }
+	constructor(name) {
+		this.name = name;
+		this.students = [];
+		this.mentors = [];
+	}
 
-    addStudent(Student) {
-        this.students.push(Student);
-    }
+	addStudent(Student) {
+		this.students.push(Student);
+	}
 
-    addMentor(Mentor) {
-        this.mentors.push(Mentor);
-    }
+	addMentor(Mentor) {
+		this.mentors.push(Mentor);
+	}
 
-    info() {
-        console.log(`The ${this.name} cohort has ${this.students.size} students and ${this.mentors.size} mentors.`);
-    }
+	info() {
+		console.log(`The ${this.name} cohort has ${this.students.size} students and ${this.mentors.size} mentors.`);
+	}
 }
 
 // examples
@@ -53,16 +53,16 @@ people.push(sponsor);
 student.skipDays(3);
 
 for (let i = 0; i < 6; i++) {
-    elon.hire();
+	elon.hire();
 }
 
 for (let i = 0; i < 4; i++) {
-    sponsor.hire();
+	sponsor.hire();
 }
 
 people.forEach((person) => {
-    person.introduce();
-    person.getGoal();
+	person.introduce();
+	person.getGoal();
 })
 
 const awesome = new Cohort('AWESOME');

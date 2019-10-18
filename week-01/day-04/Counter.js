@@ -1,20 +1,20 @@
 class Counter {
-    constructor(count = 0) {
-        this.count = count;
-        this.initial = count;
-    }
+	constructor(count = 0) {
+		this.count = count;
+		this.initial = count;
+	}
 
-    add(num = 1) {
-        this.count += num;
-    }
+	add(num = 1) {
+		this.count += num;
+	}
 
-    get() {
-        return this.count + '';
-    }
+	get() {
+		return this.count + '';
+	}
 
-    reset() {
-        this.count = this.initial;
-    }
+	reset() {
+		this.count = this.initial;
+	}
 }
 
 // examples

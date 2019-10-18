@@ -1,10 +1,10 @@
 class Tree {
-    constructor(type, color, age, sex) {
-        this.type = type;
-        this.color = color;
-        this.age = age;
-        this.sex = sex;
-    }
+	constructor(type, color, age, sex) {
+		this.type = type;
+		this.color = color;
+		this.age = age;
+		this.sex = sex;
+	}
 }
 
 tree1 = new Tree('Banyan', 'green', 20, 'm');

@@ -1,23 +1,23 @@
 const Person = require('./Person');
 
 class Sponsor extends Person {
-    constructor(name, age, gender, company = 'Google') {
-        super(name, age, gender);
-        this.company = company;
-        this.hiredStudents = 0;
-    }
+	constructor(name, age, gender, company = 'Google') {
+		super(name, age, gender);
+		this.company = company;
+		this.hiredStudents = 0;
+	}
 
-    introduce() {
-        console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
-    }
+	introduce() {
+		console.log(`Hi, I'm ${this.name}, a ${this.age} year old ${this.gender} who represents ${this.company} and hired ${this.hiredStudents} students so far.`);
+	}
 
-    hire() {
-        this.hiredStudents++;
-    }
+	hire() {
+		this.hiredStudents++;
+	}
 
-    getGoal() {
-        console.log('My goal is: Hire brilliant junior software developers.');
-    }
+	getGoal() {
+		console.log('My goal is: Hire brilliant junior software developers.');
+	}
 }
 
 module.exports = Sponsor;
