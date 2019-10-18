@@ -3,11 +3,11 @@
 // - Write a function called `sum` that sum all the numbers until the given parameter
 // - The function should return the result
 function sum() {
-  let sum = 0;
-  for (let i = 0; i < arguments.length; i++) {
-    sum += arguments[i];
-  }
-  return sum;
+	let sum = 0;
+	for (let i = 0; i < arguments.length; i++) {
+		sum += arguments[i];
+	}
+	return sum;
 }
 
 console.log(sum());

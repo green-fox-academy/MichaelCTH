@@ -6,8 +6,9 @@
 //     - Prepare for the special case when no parameters are given
 // - Greet `al`
 let al = "EPAM";
+
 function greet(str = "EPAM") {
-  console.log(`Greetings, dear ${str}`);
+	console.log(`Greetings, dear ${str}`);
 }
 
 greet(al);

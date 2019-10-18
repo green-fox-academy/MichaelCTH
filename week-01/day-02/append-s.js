@@ -5,9 +5,10 @@
 //   and appends an 's' character to its end
 // - Print the result of `appendS(am)` to the console
 let am = "dog";
+
 function appendS(str) {
-  str += "s";
-  console.log(str);
+	str += "s";
+	console.log(str);
 }
 
 appendS(am);

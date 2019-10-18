@@ -3,9 +3,9 @@
 // - Create a function called `factorio`
 //   that returns it's input's factorial
 function factorio(num) {
-  if (num <= 1) return 1;
+	if (num <= 1) return 1;
 
-  return num * factorio(num - 1);
+	return num * factorio(num - 1);
 }
 
 console.log(factorio(10));

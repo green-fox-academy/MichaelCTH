@@ -4,8 +4,9 @@
 // - Create a function called `doubling` that doubles it's input parameter
 // - Log the result of `doubling(ak)` to the console
 let ak = 123;
+
 function doubling(num) {
-  return num * 2;
+	return num * 2;
 }
 
 console.log(doubling(ak));

@@ -14,21 +14,10 @@ const lineCount = 6;
 // %%%%%%
 //
 // The square should have as many lines as lineCount is
-for (let i = 0; i < lineCount; i++) {
-  let tmp = "%";
-  let sp = " ";
-
-  if (i === 0 || i === lineCount - 1) {
-    sp = "%";
-  }
-  for (let j = 0; j < lineCount - 2; j++) {
-    if (i === j + 1) {
-      tmp += "%";
-    } else {
-      tmp += sp;
-    }
-  }
-
-  tmp += "%";
-  console.log(tmp);
+console.log('%'.repeat(lineCount));
+for (let i = 1; i < lineCount - 1; i++) {
+	let tmp = "%" + ' '.repeat(lineCount - 2) + '%';
+	tmp = tmp.substr(0, i) + '%' + tmp.substr(i + 1);
+	console.log(tmp);
 }
+console.log('%'.repeat(lineCount));

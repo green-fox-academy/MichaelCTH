@@ -14,6 +14,6 @@ console.log(aj);
 aj = [3, 4, 5, 6, 7];
 let ja = [];
 for (let i = aj.length - 1; i >= 0; i--) {
-  ja.push(aj[i]);
+	ja.push(aj[i]);
 }
 console.log(ja);

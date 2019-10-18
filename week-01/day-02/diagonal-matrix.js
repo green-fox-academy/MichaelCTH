@@ -17,14 +17,11 @@ let size = 4;
 
 let matrix = [];
 for (let i = 0; i < size; i++) {
-  let temp = [];
-  for (let j = 0; j < size; j++) {
-    temp[j] = 0;
-  }
-  temp[size - 1 - i] = 1;
-  matrix.push(temp);
+	let temp = Array(size).fill(0)
+	temp[size - 1 - i] = 1;
+	matrix.push(temp);
 }
 
-for (let i = 0; i < matrix.length; i++) {
-  console.log(matrix[i]);
-}
+matrix.forEach((row) => {
+	console.log(row);
+});

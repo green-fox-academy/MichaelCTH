@@ -12,9 +12,5 @@ const lineCount = 4;
 //
 // The triangle should have as many lines as lineCount is
 for (let i = 1; i <= lineCount; i++) {
-  var tmp = "";
-  for (let j = i; j > 0; j--) {
-    tmp += "*";
-  }
-  console.log(tmp);
+	console.log('*'.repeat(i));
 }

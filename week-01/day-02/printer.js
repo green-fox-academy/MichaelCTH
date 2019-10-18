@@ -4,7 +4,7 @@
 //   which logs to the console the input parameters
 //   (can have multiple number of arguments)
 function printer() {
-  console.log(arguments);
+	console.log(arguments);
 }
 
 printer(1);

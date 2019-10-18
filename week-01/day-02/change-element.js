@@ -6,7 +6,7 @@
 
 let s = [1, 2, 3, 8, 5, 6];
 let rst = s.map(e => {
-  if (e === 8) return 4;
-  else return e;
+	if (e === 8) return 4;
+	else return e;
 });
 console.log(rst);

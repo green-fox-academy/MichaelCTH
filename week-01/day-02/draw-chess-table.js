@@ -13,15 +13,11 @@
 const sideLen = 8;
 
 for (let i = 0; i < sideLen; i++) {
-  let sp = i % 2 === 0;
-  let fill = "% ";
+	let fill = "% ";
+	if (i % 2 !== 0) {
+		fill = " %";
+	}
 
-  if (!sp) {
-    fill = " %";
-  }
-  let temp = "";
-  for (let j = 0; j < sideLen / 2; j++) {
-    temp += fill;
-  }
-  console.log(temp);
+	fill = fill.repeat(sideLen / 2);
+	console.log(fill);
 }
