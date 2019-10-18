@@ -48,7 +48,7 @@ console.log(i1 > i2 ** 2 && i1 < i2 ** 3);
 
 const j = 1521;
 // tell if j is dividable by 3 or 5 (as a boolean)
-console.log(j % 3 == 0 || j % 5 == 0);
+console.log(j % 3 === 0 || j % 5 === 0);
 
 let k = "Apple";
 // fill the k variable with its content 4 times

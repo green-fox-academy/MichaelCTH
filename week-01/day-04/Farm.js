@@ -7,7 +7,7 @@ class Farm {
     }
 
     breed() {
-        if (this.slot == 0) {
+        if (this.slot === 0) {
             console.log('There is no space for a new animal.');
             return false;
         }

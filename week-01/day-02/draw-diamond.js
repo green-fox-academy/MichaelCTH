@@ -35,7 +35,7 @@ for (let i = lineCount / 2; i > 0; i--) {
   numStar -= 2;
   singleSideSpace++;
   arr.push(tmp);
-  if (arr.length != 1) {
+  if (arr.length !== 1) {
     arr.unshift(tmp);
   }
 }

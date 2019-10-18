@@ -26,7 +26,7 @@ console.log(mapWith([1, 2, 3], addOne));
 // Create a callback function which removes every second character from a string
 const removeSecondLetter = function (str) {
     str = str.split('').map((v, idx) => {
-        return (idx % 2 != 0) ? '' : v;
+        return (idx % 2 !== 0) ? '' : v;
     }).join('');
     return str;
 }

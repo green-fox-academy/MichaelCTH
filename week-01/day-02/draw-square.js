@@ -18,7 +18,7 @@ for (let i = 0; i < lineCount; i++) {
   let tmp = "%";
   let sp = " ";
 
-  if (i == 0 || i == lineCount - 1) {
+  if (i === 0 || i === lineCount - 1) {
     sp = "%";
   }
   for (let j = 0; j < lineCount - 2; j++) {

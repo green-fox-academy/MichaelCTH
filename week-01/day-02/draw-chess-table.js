@@ -13,7 +13,7 @@
 const sideLen = 8;
 
 for (let i = 0; i < sideLen; i++) {
-  let sp = i % 2 == 0;
+  let sp = i % 2 === 0;
   let fill = "% ";
 
   if (!sp) {
