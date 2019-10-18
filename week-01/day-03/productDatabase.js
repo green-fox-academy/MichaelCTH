@@ -38,6 +38,7 @@ console.log(`There are ${len} produces' priceis below 300`);
 let len2 = Object.values(db).filter((item) => {
     return item === 125;
 }).length;
+
 if (len2 > 0) {
     console.log('Yes, there is.');
 } else {
