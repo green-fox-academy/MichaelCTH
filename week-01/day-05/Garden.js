@@ -17,6 +17,7 @@ class Garden {
 	watering(waterAmount) {
 		let needsNum = this.waterCheck();
 		let eachNum = waterAmount / needsNum;
+		
 		this.plants.filter(item=>{
 			return item.needsWater();
 		}).forEach(item=>{

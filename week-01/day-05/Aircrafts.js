@@ -1,9 +1,7 @@
 class Aircrafts {
-	constructor(type, maxAmmo, baseDamage) {
+	constructor(type) {
 		this.type = type;
 		this.ammunition = 0;
-		this.maxAmmo = maxAmmo;
-		this.baseDamage = baseDamage;
 	}
 
 	fight() {
