@@ -1,4 +1,4 @@
-import Animal from "./Animal";
+import { Animal } from "../Zoo/Animal";
 
 interface Flyable {
   land(): void;
@@ -38,7 +38,27 @@ class Helicopter extends Vehicle implements Flyable {
 
 class Bird extends Animal implements Flyable {
   constructor() {
-    super();
+    super("Bird", 0);
+  }
+  
+  getName(): string {
+    return this.getName();
+  }
+
+  getAge(): number {
+    return this,.getAge();
+  }
+
+  setName(name: string): void {
+    this.name = name;
+  }
+
+  setAge(age: number): void {
+    this.age = age;
+  }
+
+  breed(): string {
+    return "laying eggs";
   }
 
   land(): void {
