@@ -2,7 +2,9 @@ const Plant = require('./Plant');
 
 class Tree extends Plant {
 	constructor(color) {
-		super(color, 'Tree', 0.4, 10);
+		super(color, 'Tree');
+		this.absorb = 0.4;
+		this.threshold = 10;
 	}
 }
 

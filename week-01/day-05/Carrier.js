@@ -13,12 +13,12 @@ class Carrier {
 	}
 
 	priorityFill(flag = false) {
-		this.crafts.forEach((craft) => {
-			if (flag === craft.isPriority()) {
-				let fill = Math.min(this.ammo, craft.maxAmmo);
-				this.ammo -= fill;
-				this.ammo += craft.refill(fill);
-			}
+		this.crafts.filter(craft =>{
+			return flag === craft.isPriority();
+		}).forEach(craft=>{
+			let fill = Math.min(this.ammo, craft.maxAmmo);
+			this.ammo -= fill;
+			this.ammo += craft.refill(fill);
 		});
 	}
 
@@ -27,7 +27,7 @@ class Carrier {
 			throw "Empty Ammo Storage";
 		}
 		this.priorityFill(true);
-		this.priorityFill();
+		this.priorityFill(false);
 	}
 
 	fight(otherCarrier) {
@@ -46,6 +46,7 @@ class Carrier {
 			tmp += craft.getStatus() + '\n';
 			totalDamage += (craft.ammunition * craft.baseDamage);
 		});
+		
 		let rts = `HP: ${this.health}, Aircraft count: ${this.crafts.length}, Ammo Storage: ${this.ammo}, Total damage: ${totalDamage}\n`;
 		rts += 'Aircrafts\n';
 
