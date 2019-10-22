@@ -7,18 +7,14 @@ function Playground(width, length, toys) {
 
 Playground.prototype = Object.create(Garden.prototype);
 Playground.prototype.constructor = Garden;
-
-Playground.prototype.add = function (toy) {
-  this.toys.push(toy);
-}
+Playground.prototype.add = (toy) => this.toys.push(toy);
 
 // examples
-let p1 = new Playground(10, 20, ['a', 'b', 'c']);
+const p1 = new Playground(10, 20, ['a', 'b', 'c']);
 console.log(p1.area());
 console.log(p1.circumference());
 console.log(p1.efficiency());
 p1.add('d');
 console.log(p1.toys);
-
 console.log(p1 instanceof Garden);
 console.log(p1 instanceof Playground);

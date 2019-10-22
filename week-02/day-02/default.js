@@ -1,9 +1,9 @@
 function foo(sugar = false, milk = false) {
   if (sugar && milk) {
     return 'coffee with sugar and with milk';
-  } else if (sugar) {
+  } if (sugar) {
     return 'coffee with sugar';
-  } else if (milk) {
+  } if (milk) {
     return 'coffee with milk';
   }
 

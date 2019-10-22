@@ -1,18 +1,18 @@
 function getMostWordCount(obj) {
   let max = Number.MIN_SAFE_INTEGER;
-  let gEntry = null;
-  for (let entry of Object.entries(obj)) {
-    if (entry[1] > max) {
-      max = entry[1];
-      gEntry = entry;
+  let char = null;
+  Object.entries(obj).forEach((item) => {
+    if (item[1] > max) {
+      [char, max] = item;
     }
-  }
-  return gEntry[0];
+  });
+
+  return char;
 }
 
 const obj = {
   x: 1,
   y: 2,
-  z: 3
+  z: 3,
 };
 console.log(getMostWordCount(obj));

@@ -12,23 +12,22 @@ class TestSet {
 }
 
 function foo(arr1, arr2) {
-  let allItem = new Set[];
-  let rst = new Set[];
-  arr1.forEach(item => allItem.add(item));
-  arr2.forEach(item => allItem.add(item));
+  const allItem = new Set();
+  const rst = new Set();
+  arr1.forEach((item) => allItem.add(item));
+  arr2.forEach((item) => allItem.add(item));
 
-  arr1.forEach(item => {
+  arr1.forEach((item) => {
     if (Array.prototype.indexOf.call(allItem) === -1) {
       rst.push(item);
     }
   });
 
-  arr2.forEach(item => {
+  arr2.forEach((item) => {
     if (Array.prototype.indexOf.call(allItem) === -1) {
       rst.push(item);
     }
   });
-
 }
 
 console.log(foo([1, 2, 3, 4, 5], [2, 3, 4, 5, 6]));

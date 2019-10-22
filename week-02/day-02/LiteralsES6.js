@@ -10,8 +10,8 @@ function carWrapper(model, color, year, doors, specPropName, specPropValue) {
     year,
     doors,
     specPropName,
-    specPropValue
-  }
+    specPropValue,
+  };
 
   return car;
 }

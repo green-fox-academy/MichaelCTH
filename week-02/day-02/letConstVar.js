@@ -1,6 +1,6 @@
 function foo(arr) {
   const len = arr.length;
-  let total = arr.reduce((pre, now) => pre + now);
+  const total = arr.reduce((pre, now) => pre + now);
   return total / len;
 }
 

@@ -11,7 +11,7 @@ const {
   color,
   year,
   doors,
-  historical
+  historical,
 } = car;
 
 var computer = {
@@ -36,12 +36,12 @@ const {
     color: monitorColor,
     size,
     HDMI,
-    VGA
+    VGA,
   },
   tower: {
     color: towerColor,
     CPI,
     memory,
-    SSD
-  }
+    SSD,
+  },
 } = computer;

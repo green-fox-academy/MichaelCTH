@@ -19,7 +19,7 @@ function frameFunction() {
   });
 
   // Arrow
-  multiPurposeFunction(param => param * param);
+  multiPurposeFunction((param) => param * param);
 }
 
 frameFunction();

@@ -9,7 +9,7 @@ const vectors = [
   [6, 7, 8, 9],
 ];
 
-vectors.forEach(item => console.log(foo(...item)));
+vectors.forEach((item) => console.log(foo(...item)));
 // expected result:
 // [1,2,3]
 // [0,0,0]

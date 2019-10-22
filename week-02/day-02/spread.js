@@ -13,6 +13,7 @@ function isTriangle(a, b, c) {
   }
   return true;
 }
+
 var possibleTriangles = [
   [1, 1, 1],
   [3, 4, 5],
@@ -21,5 +22,5 @@ var possibleTriangles = [
   [-1, -1, -1],
 ];
 
-const newArr = possibleTriangles.map(row => isTriangle(row));
+const newArr = possibleTriangles.map((row) => isTriangle(row));
 console.log(newArr);
