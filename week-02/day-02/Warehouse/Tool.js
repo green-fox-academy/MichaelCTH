@@ -1,5 +1,3 @@
-'use strict'
-
 const Item = require('./Item');
 
 class Tool extends Item {

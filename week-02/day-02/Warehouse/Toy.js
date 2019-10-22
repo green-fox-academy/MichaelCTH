@@ -1,10 +1,8 @@
-'use strict'
-
 const Item = require('./Item');
 
 class Toy extends Item {
   constructor(name, price, color) {
-    super(name, price)
+    super(name, price);
     this.color = color;
   }
 

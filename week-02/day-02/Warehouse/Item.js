@@ -1,5 +1,3 @@
-'use strict'
-
 class Item {
   constructor(name, price = 1) {
     this.name = name;

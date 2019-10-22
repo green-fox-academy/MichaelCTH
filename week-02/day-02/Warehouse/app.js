@@ -1,5 +1,3 @@
-'use strict'
-
 const Item = require('./Item');
 const Toy = require('./Toy');
 const Tool = require('./Tool');

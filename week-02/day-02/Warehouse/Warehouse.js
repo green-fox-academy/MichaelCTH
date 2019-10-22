@@ -1,5 +1,3 @@
-'use strict'
-
 class Warehouse {
   constructor() {
     this.itemList = [];
@@ -10,7 +8,7 @@ class Warehouse {
   }
 
   printItemsOfType(type) {
-    this.itemList.filter(item => item instanceof type).forEach(item => item.print());
+    this.itemList.filter((item) => item instanceof type).forEach((item) => item.print());
   }
 }
 
