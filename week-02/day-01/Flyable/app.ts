@@ -10,4 +10,4 @@ helicop.land();
 bird.takeOff();
 bird.fly();
 bird.land();
-console.log(`${bird.hunger}, ${bird.thirst}`);
+

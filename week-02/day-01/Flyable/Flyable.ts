@@ -40,13 +40,13 @@ class Bird extends Animal implements Flyable {
   constructor() {
     super("Bird", 0);
   }
-  
+
   getName(): string {
     return this.getName();
   }
 
   getAge(): number {
-    return this,.getAge();
+    return this.getAge();
   }
 
   setName(name: string): void {
