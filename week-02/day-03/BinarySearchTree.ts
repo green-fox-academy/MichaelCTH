@@ -12,27 +12,26 @@ class BinarySearchTree implements ITree {
     return this.root === null;
   }
 
+  searchParentCandidate(value: string): Node {
+    let pre = null, temp = this.root;
+    while (temp) {
+      pre = temp;
+      temp = (value > temp.value) ? temp.right : temp.left;
+    }
+    return pre;
+  }
+
   add(value: string): void {
     if (this.root === null) {
       this.root = new Node(value);
       return;
     }
 
-    let pre = null;
-    let temp = this.root;
-    while (temp) {
-      pre = temp;
-      if (value > temp.value) {
-        temp = temp.right;
-      } else {
-        temp = temp.left;
-      }
-    }
-
-    if (value > temp.value) {
-      temp.right = new Node(value);
+    let pre = this.searchParentCandidate(value);
+    if (value > pre.value) {
+      pre.right = new Node(value);
     } else {
-      temp.left = new Node(value);
+      pre.left = new Node(value);
     }
   }
 
@@ -52,33 +51,27 @@ class BinarySearchTree implements ITree {
   }
 
   remove(value: string): void {
-    let pre = null;
-    let temp = this.root;
-    while (temp) {
-      if (temp.value === value) {
-        let newVal;
-        if (temp.left) {
-          newVal = this.findMax(temp.left);
-        } else if (temp.right) {
-          newVal = this.findMin(temp.right);
-        } else {
-          if (value > pre.value) {
-            pre.right = null;
-          } else {
-            pre.left = null;
-          }
-        }
-        this.remove(newVal);
-        temp.value = newVal;
-      }
-
-      pre = temp;
-      if (value > temp.value) {
-        temp = temp.right;
-      } else {
-        temp = temp.left;
-      }
+    if (!this.search(value)) {
+      return;
     }
+
+    let pre = this.searchParentCandidate(value);
+    let target = (value > pre.value) ? pre.right : pre.left;
+    let newVal;
+    if (target.left) {
+      newVal = this.findMax(target.left);
+    } else if (target.right) {
+      newVal = this.findMin(target.right);
+    } else {
+      if (value > pre.value) {
+        pre.right = null;
+      } else {
+        pre.left = null;
+      }
+      return;
+    }
+    this.remove(newVal);
+    target.value = newVal;
   }
 
   search(value: string): boolean {
@@ -87,12 +80,7 @@ class BinarySearchTree implements ITree {
       if (temp.value === value) {
         return true;
       }
-
-      if (value > temp.value) {
-        temp = temp.right;
-      } else {
-        temp = temp.left;
-      }
+      temp = (value > temp.value) ? temp.right : temp.left;
     }
 
     return false;
