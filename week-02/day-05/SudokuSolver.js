@@ -1,4 +1,7 @@
 /* eslint-disable class-methods-use-this */
+
+// This Sudoku solving algorithm was initially designed by Peter Norvig at http://norvig.com/sudoku.html
+
 class SudokuSolver {
   constructor(matrix = null) {
     this.matrix = matrix;
@@ -29,21 +32,22 @@ class SudokuSolver {
     this.squares = this.cross(this.rows, this.cols);
     this.cols.forEach((c) => this.unitList.push(this.cross(this.rows, c)));
     this.rows.forEach((r) => this.unitList.push(this.cross(r, this.cols)));
-    this.rrows.forEach((rs) => this.ccols.forEach(((cs) => this.unitList.push(this.cross(rs, cs)))));
+    this.rrows.forEach((rs) => this.ccols.forEach(((cs) => {
+      this.unitList.push(this.cross(rs, cs));
+    })));
     this.squares.forEach((s) => { this.units[s] = []; });
     this.squares.forEach((s) => { this.peers[s] = {}; });
-    this.squares.forEach((s) => { this.unitList.forEach((u) => { if (this.member(s, u)) this.units[s].push(u); }); });
+    this.squares.forEach((s) => {
+      this.unitList.forEach((u) => {
+        if (this.member(s, u)) this.units[s].push(u);
+      });
+    });
 
-    for (let s in this.squares) {
-      for (let u in this.units[this.squares[s]]) {
-        let ul = this.units[this.squares[s]][u];
-        for (let s2 in ul) {
-          if (ul[s2] != this.squares[s]) {
-            this.peers[this.squares[s]][ul[s2]] = true;
-          }
-        }
-      }
-    }
+    this.squares.forEach((s) => {
+      this.units[s].forEach((u) => {
+        u.forEach((s2) => { if (s2 !== s) this.peers[s][s2] = true; });
+      });
+    });
   }
 
   parseGrid() {
@@ -60,7 +64,6 @@ class SudokuSolver {
 
     const values = {};
     this.squares.forEach((s) => { values[s] = this.digits; });
-
     for (let s in this.squares) {
       if (this.digits.indexOf(grid2.charAt(s)) >= 0 && !this.assign(values, this.squares[s], grid2.charAt(s))) {
         return false;
@@ -71,10 +74,10 @@ class SudokuSolver {
 
   assign(values, sq, dig) {
     let result = true;
-    let vals = values[sq];
-    for (let d = 0; d < vals.length; d += 1) {
-      if (vals.charAt(d) !== dig) {
-        result &= (this.eliminate(values, sq, vals.charAt(d)) ? true : false);
+    const val = values[sq];
+    for (let d = 0; d < val.length; d += 1) {
+      if (val.charAt(d) !== dig) {
+        result &= (this.eliminate(values, sq, val.charAt(d)) ? true : false);
       }
     }
     return (result ? values : false);
@@ -99,12 +102,11 @@ class SudokuSolver {
       }
     }
 
-    for (let u in this.units[sq]) {
+    for (let u of this.units[sq]) {
       let dplaces = [];
-      for (let s in this.units[sq][u]) {
-        let sq2 = this.units[sq][u][s];
-        if (values[sq2].indexOf(dig) != -1)
-          dplaces.push(sq2);
+      for (let s of u) {
+        if (values[s].indexOf(dig) != -1)
+          dplaces.push(s);
       }
 
       if (dplaces.length === 0) {
@@ -128,13 +130,15 @@ class SudokuSolver {
     if (!values) {
       return false;
     }
-    let min = 10, max = 1, sq = null;
-    for (let s in this.squares) {
-      if (values[this.squares[s]].length > max)
-        max = values[this.squares[s]].length;
-      if (values[this.squares[s]].length > 1 && values[this.squares[s]].length < min) {
-        min = values[this.squares[s]].length;
-        sq = this.squares[s];
+    let min = 10;
+    let max = 1;
+    let sq = null;
+    for (let s of this.squares) {
+      if (values[s].length > max)
+        max = values[s].length;
+      if (values[s].length > 1 && values[s].length < min) {
+        min = values[s].length;
+        sq = s;
       }
     }
 
@@ -174,9 +178,9 @@ class SudokuSolver {
     for (let r in this.rows) {
       for (let c in this.cols) {
         board += this.center(values[this.rows[r] + this.cols[c]], width);
-        if (c == 2 || c == 5) board += "|";
+        if (c === '2' || c === '5') board += "|";
       }
-      if (r == 2 || r == 5) {
+      if (r === '2' || r === '5') {
         board += line;
       }
       board += '\n';

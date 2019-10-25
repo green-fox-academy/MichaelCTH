@@ -1,6 +1,8 @@
 import { ITree } from './interface';
 import { Node } from './TreeNode';
 
+// TODO: Deletion is implemented, but is not fully tested yet.
+
 class BinarySearchTree implements ITree {
   root: Node;
 
