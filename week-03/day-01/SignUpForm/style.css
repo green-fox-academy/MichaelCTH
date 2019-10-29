@@ -59,6 +59,7 @@ h1{
   vertical-align: middle;
   padding-top:10px;
   color:gray;
+  box-shadow: 0 2px 4px 1px ;
 }
 
 .rightSignPanel:after{
