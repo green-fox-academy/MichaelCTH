@@ -1,0 +1,14 @@
+.container{
+  background-color: rgb(255,214,42);
+  width: 700px;
+  height: 300px;
+}
+
+.purple{
+  background-color: rgb(176,42,255);
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 300px;
+  top: 100px;
+}

@@ -1,0 +1,52 @@
+.container{
+  width: 60vw;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header{
+  background-color:  rgb(42,234,255);
+  /* height: 100px; */
+  flex-grow: 1;
+  width: 100%;
+}
+
+.footer{
+  background-color:  rgb(0,0,254);
+  /* height: 100px; */
+  flex-grow: 1;
+  width: 100%;
+}
+
+.middle{
+  flex-grow: 4;
+  display: flex;
+}
+
+.yellow{
+  background-color:  rgb(254,165,0);
+  flex-grow: 1;
+}
+
+.red{
+  background-color:  rgb(254,0,0);
+  flex-grow: 3;
+  margin:0 20px;
+  position: relative;
+}
+
+.purple{
+  background-color:  rgb(129,0,127);
+  flex-grow: 1;
+}
+
+.black-box{
+  width:50px;
+  height:50px;
+  right:20px;
+  bottom: 20px;
+  background-color: black;
+  position: absolute;
+}
