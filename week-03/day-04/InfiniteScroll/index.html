@@ -1,0 +1,38 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <script>
+    function randomRGB() {
+      var x = Math.floor(Math.random() * 256);
+      var y = Math.floor(Math.random() * 256);
+      var z = Math.floor(Math.random() * 256);
+      return "rgb(" + x + "," + y + "," + z + ")";
+    }
+
+    function appendDiv(num) {
+      for (let i = 0; i < ranNum; i += 1) {
+        let newEle = document.createElement('div');
+        newEle.style.backgroundColor = randomRGB();
+        document.body.appendChild(newEle);
+      }
+    }
+
+    const ranNum = Math.round(Math.random() * 50);
+    appendDiv(ranNum);
+    let scrollThreshold = 300;
+
+    window.addEventListener('scroll', (e) => {
+      let diff = document.body.offsetHeight - window.innerHeight - window.scrollY;
+      if (diff < scrollThreshold) {
+        appendDiv(10);
+      }
+    });
+
+  </script>
+</body>
+
+</html>
