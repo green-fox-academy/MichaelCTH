@@ -1,0 +1,42 @@
+<html>
+
+<body>
+  <article>
+
+  </article>
+  <script>
+    'use strict'
+
+    function addArticle(article) {
+      let head = document.createElement('h1');
+      head.textContent = article.headline.main;
+      let date = document.createElement('h4');
+      date.textContent = article.pub_date;
+      let snippet = document.createElement('p');
+      snippet.textContent = article.snippet;
+      let link = document.createElement('a');
+      link.textContent = "Read More";
+      link.href = article.web_url;
+      link.setAttribute('target', '_blank');
+      let container = document.createElement('div');
+      container.appendChild(head);
+      container.appendChild(date);
+      container.appendChild(snippet);
+      container.appendChild(link);
+      container.appendChild(document.createElement('hr'));
+      document.querySelector('article').appendChild(container);
+    }
+
+    let url = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?q=moon+landing+Apollo+11&api-key=YWvMfNkiSiW1vG8SNdFCYo2MgKXsbYVx';
+    fetch(url)
+      .then((response) => { return response.json(); })
+      .then((data) => {
+        data.response.docs.forEach(element => {
+          console.log(element);
+          addArticle(element);
+        });
+      });
+  </script>
+</body>
+
+</html>
