@@ -1,0 +1,28 @@
+<html>
+
+<body>
+  <form action="#">
+    <span>IP Address: </span>
+    <input type="text">
+    <input type="submit" value="Loop Up">
+  </form>
+  <iframe width="600" height="450" frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA&q=Space+Needle,Seattle+WA">
+  </iframe>
+  <script>
+    'use strict'
+
+    const mapAPI = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA&q=';
+
+    document.querySelector('input[type="submit"]').addEventListener('click', () => {
+      let ip = document.querySelector('input[type="text"]').value;
+      let url = 'http://api.ipapi.com/'.concat(ip).concat('?access_key=b5d7ef0b26780fa195574b2ee9b70e4f');
+      fetch(url).then((response) => response.json())
+        .then((result) => {
+          document.querySelector('iframe').setAttribute('src', mapAPI + result.city);
+        });
+    });
+  </script>
+</body>
+
+</html>
