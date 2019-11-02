@@ -16,7 +16,7 @@
 
     document.querySelector('input[type="submit"]').addEventListener('click', () => {
       let ip = document.querySelector('input[type="text"]').value;
-      let url = 'http://api.ipapi.com/'.concat(ip).concat('?access_key=b5d7ef0b26780fa195574b2ee9b70e4f');
+      let url = `http://api.ipapi.com/${ip}?access_key=b5d7ef0b26780fa195574b2ee9b70e4f`;
       fetch(url).then((response) => response.json())
         .then((result) => {
           document.querySelector('iframe').setAttribute('src', mapAPI + result.city);

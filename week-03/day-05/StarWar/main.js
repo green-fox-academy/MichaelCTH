@@ -2,7 +2,7 @@
 
 function appendMoive(parent, moive) {
   const mv = document.createElement('li');
-  mv.textContent = moive.title.concat('(').concat(moive.release_date).concat(')');
+  mv.textContent = `${moive.title}(${moive.release_date})`;
   parent.appendChild(mv);
 }
 
@@ -32,7 +32,7 @@ function appendCharacter(parent, char) {
 }
 
 function searchPeople(name) {
-  fetch('https://swapi.co/api/people?search='.concat(name))
+  fetch(`https://swapi.co/api/people?search=${name}`)
     .then((response) => {
       if (response.status >= 200 && response.status < 300) {
         return response.json();
