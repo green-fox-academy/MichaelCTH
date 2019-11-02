@@ -1,0 +1,21 @@
+<html>
+
+<body>
+  <input type="submit" value="Get Joke">
+  <div class="container"></div>
+  <script>
+    function appendResult(result) {
+      const container = document.querySelector('div');
+      container.textContent = result.joke;
+    }
+    function fetchData() {
+      fetch('http://api.icndb.com/jokes/random')
+        .then((response) => response.json())
+        .then((obj) => appendResult(obj.value))
+        .catch(console.error);
+    }
+    document.querySelector('input').addEventListener('click', fetchData);
+  </script>
+</body>
+
+</html>
