@@ -1,48 +1,48 @@
-body{
+body {
   background-image: url('./bg.png');
   background-size: 100vw 100vh;
 }
-  
-.container{
-    width: 500px;
-    margin: 20px auto;
-    text-align: center;
-  }
 
-h1{
-  color:yellow;
+.container {
+  width: 500px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+h1 {
+  color: yellow;
   font-size: 50px;
 }
 
-input[type='text']{
+input[type='text'] {
   font-size: 20px;
   border: 0;
   height: 35px;
   color: gray;
 }
 
-input[type='submit']{
+input[type='submit'] {
   border: 0;
   background-color: yellow;
   font-size: 20px;
   font-weight: bold;
-  color:grey;
+  color: grey;
   height: 35px;
 }
 
-.result-list{
+.result-list {
   width: 600px;
   height: 300px;
   margin: 20px auto;
   color: white;
-  background-color: rgb(211,211,211,0.1);
+  background-color: rgb(211, 211, 211, 0.1);
   display: flex;
   text-align: left;
   font-size: 18px;
   justify-content: space-between;
 }
 
-.result-list ul li{
+.result-list ul li {
   list-style-type: none;
   border-left: 2px solid yellow;
   padding: 5px 5px;

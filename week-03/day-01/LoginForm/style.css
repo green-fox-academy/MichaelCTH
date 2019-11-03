@@ -1,27 +1,27 @@
-body{
-  background-color: rgb(235,235,235);
+body {
+  background-color: rgb(235, 235, 235);
 }
 
-#logInPanel{
+#logInPanel {
   width: 350px;
   background-color: white;
   margin: 50px auto;
-  padding:20px 50px;
-  color:rgb(93,93,93);
+  padding: 20px 50px;
+  color: rgb(93, 93, 93);
 }
 
-h1{
+h1 {
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: normal;
 }
 
-label{
+label {
   margin: 0 auto;
-  font-size:12px;
+  font-size: 12px;
 }
 
-input{
+input {
   display: block;
   width: 350px;
   height: 40px;
@@ -30,29 +30,29 @@ input{
   border: 1px solid #ccc;
 }
 
-input:focus{
+input:focus {
   border: 1px solid green;
 }
 
-input[type="submit"]{
+input[type='submit'] {
   background: black;
   color: white;
   border-radius: 20px;
-  width:100px;
-  margin-left:0px;
-  font-size:12px;
+  width: 100px;
+  margin-left: 0px;
+  font-size: 12px;
   margin-top: 60px;
 }
 
-#forgotPass{
+#forgotPass {
   width: 350px;
   margin-top: -15px;
   text-align: right;
   float: right;
 }
 
-#password{
-  background-image: url("eye.png");
+#password {
+  background-image: url('eye.png');
   background-position: right;
   padding-right: 10px;
   background-repeat: no-repeat;

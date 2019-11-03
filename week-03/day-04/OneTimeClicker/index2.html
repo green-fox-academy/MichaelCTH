@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: EventListeners</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Workshop: EventListeners</title>
-</head>
+  <body>
+    <button>Click me</button>
+    <script>
+      'use strict';
 
-<body>
-  <button>Click me</button>
-  <script>
-    'use strict'
-    // Create an event listener which logs the current timestamp to the console once the button is clicked.
-    // When the button is clicked for the second or any other times no event listener should be called.
-    // Try to solve this two different ways.
-    // hint: take a look at the button attributes https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
-    let logTimestamp = function () {
-      let date = new Date();
-      console.log(date.getTime());
-      this.removeEventListener('click', logTimestamp);
-    }
+      // Create an event listener which logs the current timestamp to the console once the button is clicked.
+      // When the button is clicked for the second or any other times no event listener should be called.
+      // Try to solve this two different ways.
+      // hint: take a look at the button attributes https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+      const logTimestamp = () => {
+        const date = new Date();
+        console.log(date.getTime());
+        this.removeEventListener('click', logTimestamp);
+      };
 
-    document.querySelector('button').addEventListener('click', logTimestamp);
-  </script>
-</body>
-
+      document.querySelector('button').addEventListener('click', logTimestamp);
+    </script>
+  </body>
 </html>

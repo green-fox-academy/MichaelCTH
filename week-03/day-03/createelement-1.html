@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: CreateElement</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Workshop: CreateElement</title>
-</head>
+  <body>
+    <ul class="asteroids">
+      <li id="b325" class="asteroid">The King</li>
+      <li class="asteroid b326">The Conceited Man</li>
+    </ul>
+    <div class="container"></div>
 
-<body>
-  <ul class="asteroids">
-    <li id="b325" class="asteroid">The King</li>
-    <li class="asteroid b326">The Conceited Man</li>
-  </ul>
-  <div class="container"></div>
+    <script>
+      'use strict';
 
-  <script>
-    'use strict'
-    // Add an item that says 'The Green Fox' to the asteroid list.
-    const myList = document.querySelector('ul');
-    let newElement = document.createElement('li');
-    newElement.innerText = 'The Green Fox';
-    myList.appendChild(newElement);
+      const imgEx =
+        'https://b.thumbs.redditmedia.com/8RJ1zsSxLbTrSrRAhziwMynfkWVcuFNMXPsLqtGct1o.png';
+      // Add an item that says 'The Green Fox' to the asteroid list.
+      const myList = document.querySelector('ul');
+      let newElement = document.createElement('li');
+      newElement.innerText = 'The Green Fox';
+      myList.appendChild(newElement);
 
-    // Add an item that says 'The Lamplighter' to the asteroid list.
-    newElement = document.createElement('li');
-    newElement.innerText = 'The Lamplighter';
-    myList.appendChild(newElement);
+      // Add an item that says 'The Lamplighter' to the asteroid list.
+      newElement = document.createElement('li');
+      newElement.innerText = 'The Lamplighter';
+      myList.appendChild(newElement);
 
-    // Add a heading saying 'I can add elements to the DOM!' to the.container.
-    document.body.insertAdjacentHTML('afterbegin', '<h1>I can add elements to the DOM!</h1>');
+      // Add a heading saying 'I can add elements to the DOM!' to the.container.
+      document.body.insertAdjacentHTML('afterbegin', '<h1>I can add elements to the DOM!</h1>');
 
-    // Add an image, any image, to the container.
-    newElement = document.createElement('img');
-    newElement.src = 'https://b.thumbs.redditmedia.com/8RJ1zsSxLbTrSrRAhziwMynfkWVcuFNMXPsLqtGct1o.png';
-    document.querySelector('.container').appendChild(newElement);
-
-  </script>
-</body>
-
+      // Add an image, any image, to the container.
+      newElement = document.createElement('img');
+      newElement.src = imgEx;
+      document.querySelector('.container').appendChild(newElement);
+    </script>
+  </body>
 </html>

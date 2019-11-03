@@ -1,31 +1,31 @@
 <html>
+  <body>
+    <ul class="photoWall"></ul>
+    <script>
+      'use strict';
 
-<body>
-  <ul class='photoWall'></ul>
-  <script>
-    'use strict'
+      const API_KEY = 'ghT1GPqGjdMUbPgVfWTlQSeDSD6F9XVJ';
+      const url = `http://api.giphy.com/v1/gifs/search?q=iron+man&api_key=${API_KEY}&limit=16`;
 
-    function addPhoto(image) {
-      let newEle = document.createElement('img');
-      let newLi = document.createElement('li');
-      newLi.appendChild(newEle);
-      newEle.src = image['fixed_height_still'].url;
-      newLi.addEventListener('click', function (e) {
-        e.target.src = image['fixed_height'].url;
-      })
-      document.querySelector('.photoWall').appendChild(newLi);
-    }
+      function addPhoto(image) {
+        const newEle = document.createElement('img');
+        const newLi = document.createElement('li');
+        newLi.appendChild(newEle);
+        newEle.src = image.fixed_height_still.url;
+        newLi.addEventListener('click', (e) => {
+          console.log(image.fixed_height.url);
+          e.target.src = image.fixed_height.url;
+        });
+        document.querySelector('.photoWall').appendChild(newLi);
+      }
 
-    let url = 'http://api.giphy.com/v1/gifs/search?q=iron+man&api_key=ghT1GPqGjdMUbPgVfWTlQSeDSD6F9XVJ&limit=16';
-    fetch(url)
-      .then((response) => { return response.json(); })
-      .then((data) => {
-        data.data.forEach(element => {
-          console.log(element);
-          addPhoto(element.images);
-        });;
-      });
-  </script>
-</body>
-
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          data.data.forEach((element) => {
+            addPhoto(element.images);
+          });
+        });
+    </script>
+  </body>
 </html>

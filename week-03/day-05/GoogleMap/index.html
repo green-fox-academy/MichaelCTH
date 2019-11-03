@@ -1,28 +1,34 @@
 <html>
+  <body>
+    <form action="#">
+      <span>IP Address: </span>
+      <input type="text" />
+      <input type="submit" value="Loop Up" />
+    </form>
+    <iframe
+      width="600"
+      height="450"
+      frameborder="0"
+      style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA&q=Space+Needle,Seattle+WA"
+    >
+    </iframe>
+    <script>
+      'use strict';
 
-<body>
-  <form action="#">
-    <span>IP Address: </span>
-    <input type="text">
-    <input type="submit" value="Loop Up">
-  </form>
-  <iframe width="600" height="450" frameborder="0" style="border:0"
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA&q=Space+Needle,Seattle+WA">
-  </iframe>
-  <script>
-    'use strict'
+      const MAPAPI_KEY = 'AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA';
+      const IPAPI_KEY = 'b5d7ef0b26780fa195574b2ee9b70e4f';
+      const mapURL = `https://www.google.com/maps/embed/v1/place?key=${MAPAPI_KEY}&q=`;
+      const ipURL = 'http://api.ipapi.com/';
 
-    const mapAPI = 'https://www.google.com/maps/embed/v1/place?key=AIzaSyAS-HpV459V-m1VsG_Zkbt2sdTeZpF9nOA&q=';
-
-    document.querySelector('input[type="submit"]').addEventListener('click', () => {
-      let ip = document.querySelector('input[type="text"]').value;
-      let url = `http://api.ipapi.com/${ip}?access_key=b5d7ef0b26780fa195574b2ee9b70e4f`;
-      fetch(url).then((response) => response.json())
-        .then((result) => {
-          document.querySelector('iframe').setAttribute('src', mapAPI + result.city);
-        });
-    });
-  </script>
-</body>
-
+      document.querySelector('input[type="submit"]').addEventListener('click', () => {
+        const ip = document.querySelector('input[type="text"]').value;
+        fetch(`${ipURL}${ip}?access_key=${IPAPI_KEY}`)
+          .then((response) => response.json())
+          .then((result) => {
+            document.querySelector('iframe').setAttribute('src', mapURL + result.city);
+          });
+      });
+    </script>
+  </body>
 </html>

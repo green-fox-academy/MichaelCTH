@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 const items = ['bread', 'milk', 'orange', 'tomato'];
 const buttons = ['Up', '>', 'X', 'Down'];

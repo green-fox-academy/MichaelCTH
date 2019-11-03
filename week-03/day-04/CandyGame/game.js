@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 let boost = 1;
 // - Gather 10.000 candies!

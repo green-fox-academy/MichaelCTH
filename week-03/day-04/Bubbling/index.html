@@ -1,110 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Workshop: EventListeners</title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    nav {
-      text-align: center;
-    }
-
-    button {
-      margin: 16px;
-    }
-
-    .img-inspector {
-      margin: 0 auto;
-      width: 500px;
-      height: 320px;
-      border: 1px solid #3a3a3a;
-      background-image: url("mp.jpg");
-      background-size: 200%;
-    }
-  </style>
-</head>
-
-<body>
-  <nav>
-    <button data-action="move" data-direction="up">Up</button>
-    <button data-action="move" data-direction="down">Down</button>
-    <button data-action="move" data-direction="left">Left</button>
-    <button data-action="move" data-direction="right">Right</button>
-    <button data-action="zoom" data-direction="in">Zoom in</button>
-    <button data-action="zoom" data-direction="out">Zoom out</button>
-  </nav>
-  <div class="img-inspector">
-  </div>
-
-  <script>
-    'use strict'
-    // Here is an image inspector, but the buttons are not implemented yet, that will
-    // be your task!
-    //  - the nav buttons (up, down, left, right) move the background by 10px
-    //  - the zoom buttons increase/decrease the image by 20%
-    //  - attach only two event listeners to the nav element
-    //    - one for navigation
-    //    - one for zooming
-
-    // initialize
-    document.querySelector('.img-inspector').style.backgroundSize = '200%';
-    document.querySelector('.img-inspector').style.backgroundPosition = '0 0';
-
-    function move(target) {
-      let img = document.querySelector('.img-inspector');
-      let posArr = img.style.backgroundPosition.split(' ');
-      let xPos = parseInt(posArr[0]), yPos = parseInt(posArr[1]);
-      switch (target.dataset['direction']) {
-        case 'up':
-          yPos -= 10;
-          break;
-        case 'down':
-          yPos += 10;
-          break;
-        case 'left':
-          xPos += 10;
-          break;
-        case 'right':
-          xPos -= 10;
-          break;
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: EventListeners</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
       }
-      img.style.backgroundPosition = (xPos + 'px ' + yPos + 'px');
-    }
 
-    function zoom(target) {
-      let img = document.querySelector('.img-inspector');
-      let oldSize = img.style.backgroundSize;
-      oldSize = parseFloat(oldSize);
+      nav {
+        text-align: center;
+      }
 
-      if (target.dataset['direction'] === 'in') {
-        oldSize *= 1.2;
-      } else {
-        if ((oldSize * 0.8) > 1) {
+      button {
+        margin: 16px;
+      }
+
+      .img-inspector {
+        margin: 0 auto;
+        width: 500px;
+        height: 320px;
+        border: 1px solid #3a3a3a;
+        background-image: url('mp.jpg');
+        background-size: 200%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <button data-action="move" data-direction="up">Up</button>
+      <button data-action="move" data-direction="down">Down</button>
+      <button data-action="move" data-direction="left">Left</button>
+      <button data-action="move" data-direction="right">Right</button>
+      <button data-action="zoom" data-direction="in">Zoom in</button>
+      <button data-action="zoom" data-direction="out">Zoom out</button>
+    </nav>
+    <div class="img-inspector"></div>
+
+    <script>
+      'use strict';
+
+      // Here is an image inspector, but the buttons are not implemented yet, that will
+      // be your task!
+      //  - the nav buttons (up, down, left, right) move the background by 10px
+      //  - the zoom buttons increase/decrease the image by 20%
+      //  - attach only two event listeners to the nav element
+      //    - one for navigation
+      //    - one for zooming
+
+      // initialize
+      document.querySelector('.img-inspector').style.backgroundSize = '200%';
+      document.querySelector('.img-inspector').style.backgroundPosition = '0 0';
+
+      function move(target) {
+        const img = document.querySelector('.img-inspector');
+        const posArr = img.style.backgroundPosition.split(' ');
+        let xPos = parseInt(posArr[0], 10);
+        let yPos = parseInt(posArr[1], 10);
+        switch (target.dataset.direction) {
+          case 'up':
+            yPos -= 10;
+            break;
+          case 'down':
+            yPos += 10;
+            break;
+          case 'left':
+            xPos += 10;
+            break;
+          case 'right':
+            xPos -= 10;
+            break;
+          default:
+            break;
+        }
+        img.style.backgroundPosition = `${xPos}px ${yPos}px`;
+      }
+
+      function zoom(target) {
+        const img = document.querySelector('.img-inspector');
+        let oldSize = img.style.backgroundSize;
+        oldSize = parseFloat(oldSize);
+
+        if (target.dataset.direction === 'in') {
+          oldSize *= 1.2;
+        }
+        if (target.dataset.direction === 'out' && oldSize * 0.8 > 1) {
           oldSize *= 0.8;
         }
+        img.style.backgroundSize = `${oldSize}%`;
       }
-      img.style.backgroundSize = oldSize + '%';
-    }
 
-    document.querySelector('nav').addEventListener('click', function (e) {
-      switch (e.target.dataset['action']) {
-        case 'move':
-          move(e.target);
-          break;
-        case 'zoom':
-          zoom(e.target);
-          break;
-      }
-    });
-
-
-  </script>
-</body>
-
+      document.querySelector('nav').addEventListener('click', (e) => {
+        switch (e.target.dataset.action) {
+          case 'move':
+            move(e.target);
+            break;
+          case 'zoom':
+            zoom(e.target);
+            break;
+          default:
+            break;
+        }
+      });
+    </script>
+  </body>
 </html>

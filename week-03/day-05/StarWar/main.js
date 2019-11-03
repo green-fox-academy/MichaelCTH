@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function appendMoive(parent, moive) {
   const mv = document.createElement('li');
@@ -7,7 +7,7 @@ function appendMoive(parent, moive) {
 }
 
 function searchMoive(e) {
-  fetch(e.target.dataset['url'])
+  fetch(e.target.dataset.url)
     .then((response) => {
       if (response.status >= 200 && response.status < 300) {
         return response.json();

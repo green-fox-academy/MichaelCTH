@@ -1,8 +1,8 @@
-body{
+body {
   background-color: lightgrey;
 }
 
-#signUpPanel{
+#signUpPanel {
   width: 500px;
   margin: auto;
   background-color: white;
@@ -10,82 +10,82 @@ body{
   box-shadow: 1px 1px 10px 2px grey;
 }
 
-h1{
-  font-size:30px;
+h1 {
+  font-size: 30px;
   font-weight: normal;
-  color: rgb(100,100,100);
-  font-family: "Times New Roman", Times, serif;
+  color: rgb(100, 100, 100);
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.formField{
+.formField {
   display: block;
-  border:0;
+  border: 0;
   border-bottom: 1px solid lightgray;
   width: 200px;
   height: 45px;
   padding-top: 18px;
-  font-size:16px;
-  color: rgb(120,120,120);
+  font-size: 16px;
+  color: rgb(120, 120, 120);
 }
 
-.formField:focus{
+.formField:focus {
   border-bottom: 2px solid green;
 }
 
-#signUp{
-  background-color:rgb(74,157,134);
+#signUp {
+  background-color: rgb(74, 157, 134);
   border: 0;
-  color:whitesmoke;
+  color: whitesmoke;
   width: 125px;
   height: 34px;
   border-radius: 3px;
   margin-top: 40px;
-  font-size:12px;
+  font-size: 12px;
   font-weight: bold;
 }
 
-.leftSignPanel{
-  float:left;
+.leftSignPanel {
+  float: left;
 }
 
-.midSignPanel{
-  float:left;
+.midSignPanel {
+  float: left;
   margin: 100px 20px 0 20px;
-  background-color: rgb(221,221,221);
-  height:30px;
+  background-color: rgb(221, 221, 221);
+  height: 30px;
   width: 40px;
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
-  padding-top:10px;
-  color:gray;
-  box-shadow: 0 2px 4px 1px ;
+  padding-top: 10px;
+  color: gray;
+  box-shadow: 0 2px 4px 1px;
 }
 
-.rightSignPanel:after{
-  content:"";
+.rightSignPanel:after {
+  content: '';
   display: block;
-  clear:both;
+  clear: both;
 }
 
-.socialIcon{
-  width:200px;
+.socialIcon {
+  width: 200px;
   height: 40px;
   border: 0;
-  margin-top:20px;
-  color:whitesmoke;
+  margin-top: 20px;
+  color: whitesmoke;
   border-radius: 3px;
   font-size: 12px;
   font-weight: bold;
 }
 
-#FB{
-  background-color: rgb(56,81,138);
+#FB {
+  background-color: rgb(56, 81, 138);
 }
- #TW{
-  background-color: rgb(107,171,232);
- }
+#TW {
+  background-color: rgb(107, 171, 232);
+}
 
- #GP{
-  background-color: rgb(205,85,66);
- }
+#GP {
+  background-color: rgb(205, 85, 66);
+}

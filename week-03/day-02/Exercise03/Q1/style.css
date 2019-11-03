@@ -1,13 +1,13 @@
-.container{
-  background-color: rgb(255,214,42);
+.container {
+  background-color: rgb(255, 214, 42);
   height: 300px;
   display: flex;
-  padding-left:0;
+  padding-left: 0;
   align-items: center;
 }
 
-.item{
-  background-color: rgb(176,42,255);
+.item {
+  background-color: rgb(176, 42, 255);
   height: 100px;
   width: 100px;
   list-style-type: none;

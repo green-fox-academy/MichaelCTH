@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: innerHTML, textContent</title>
+    <style>
+      .limegreen {
+        background-color: limegreen;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <title>Workshop: innerHTML, textContent</title>
-  <style>
-    .limegreen {
-      background-color: limegreen;
-    }
-  </style>
-</head>
+  <body>
+    <ul>
+      <li>placeholder</li>
+      <li>placeholder</li>
+      <li>placeholder</li>
+      <li>placeholder</li>
+    </ul>
 
-<body>
-  <ul>
-    <li>placeholder</li>
-    <li>placeholder</li>
-    <li>placeholder</li>
-    <li>placeholder</li>
-  </ul>
+    <script>
+      'use strict';
 
-  <script>
-    'use strict'
-    // 1) replace the list items' content with items from this list:
-    const newList = ['apple', 'banana', 'cat', 'dog'];
-    const myList = document.querySelectorAll("li");
-    myList.forEach((ele, index) => ele.innerText = newList[index]);
+      // 1) replace the list items' content with items from this list:
+      const newList = ['apple', 'banana', 'cat', 'dog'];
+      const myList = document.querySelectorAll('li');
+      myList.forEach((ele, index) => {
+        const tmp = ele;
+        tmp.innerText = newList[index];
+      });
 
-    // 2) change the <ul> element's background color to 'limegreen'
-    //   - use css class to change the color instead of the style property
-    const listParent = document.querySelector("ul");
-    listParent.className = 'limegreen';
-  </script>
-</body>
-
+      // 2) change the <ul> element's background color to 'limegreen'
+      //   - use css class to change the color instead of the style property
+      const listParent = document.querySelector('ul');
+      listParent.className = 'limegreen';
+    </script>
+  </body>
 </html>

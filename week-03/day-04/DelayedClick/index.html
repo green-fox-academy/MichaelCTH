@@ -1,17 +1,18 @@
 <html>
+  <head></head>
 
-<head></head>
+  <body>
+    <button>Click Me</button>
+    <p></p>
+    <script>
+      'use strict';
 
-<body>
-  <button>Click Me</button>
-  <p></p>
-  <script>
-    'use strict'
-    let callback = function () {
-      setTimeout(() => document.querySelector('p').textContent = '2 seconds ellapsed', 2000);
-    }
-    document.querySelector('button').addEventListener('click', callback);
-  </script>
-</body>
-
+      const callback = () => {
+        setTimeout(() => {
+          document.querySelector('p').textContent = '2 seconds ellapsed';
+        }, 2000);
+      };
+      document.querySelector('button').addEventListener('click', callback);
+    </script>
+  </body>
 </html>

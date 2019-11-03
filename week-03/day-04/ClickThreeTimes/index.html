@@ -1,24 +1,26 @@
 <html>
+  <body>
+    <button>Click Me</button>
+    <p></p>
+    <script>
+      'use strict';
 
-<body>
-  <button>Click Me</button>
-  <p></p>
-  <script>
-    'use strict'
-    let counter = undefined;
-    window.addEventListener('load', function () {
-      setTimeout(function () { counter = 0; }, 5000);
-    });
+      let counter = null;
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          counter = 0;
+        }, 5000);
+      });
 
-    document.querySelector('button').addEventListener('click', function () {
-      counter += 1;
-      if (counter === 3) {
-        document.querySelector('p').textContent = '5 seconds elapsed and clicked 3 times';
-      } else if (counter > 3) {
-        document.querySelector('p').textContent = '5 seconds elapsed and clicked more than 3 times';
-      }
-    });
-  </script>
-</body>
-
+      document.querySelector('button').addEventListener('click', () => {
+        counter += 1;
+        if (counter === 3) {
+          document.querySelector('p').textContent = '5 seconds elapsed and clicked 3 times';
+        } else if (counter > 3) {
+          document.querySelector('p').textContent =
+            '5 seconds elapsed and clicked more than 3 times';
+        }
+      });
+    </script>
+  </body>
 </html>
