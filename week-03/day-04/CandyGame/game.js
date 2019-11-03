@@ -1,41 +1,37 @@
 'use strict';
 
 let boost = 1;
-// - Gather 10.000 candies!
-document.querySelector('.candies').textContent = 10;
+const candyDisplay = document.querySelector('.candies');
+const lollypopsDisplay = document.querySelector('.lollypops');
+const speedDisplay = document.querySelector('.speed');
+let lollyNum = 3;
+let candyNum = 10;
 
-// - Clicking the ‘Create candies’ button gives you 1 candy.
-function addCandy() {
-  const candyNum = parseInt(document.querySelector('.candies').textContent, 10);
-  document.querySelector('.candies').textContent = candyNum + 1;
-};
-document.querySelector('.create-candies').addEventListener('click', addCandy);
+function addCandy(num = 100) {
+  candyNum += num;
+  candyDisplay.textContent = candyNum;
+}
 
-// - You can buy a lollipop for 100 candies by clicking the ‘Buy lollipop’ button.
-document.querySelector('.buy-lollypops').addEventListener('click', () => {
-  const candyNum = parseInt(document.querySelector('.candies').textContent, 10);
-  if (candyNum >= 100) {
-    document.querySelector('.candies').textContent = (candyNum - 100);
-    document.querySelector('.lollypops').textContent += String.fromCodePoint('0x1F36D');
-  }
-});
+candyDisplay.textContent = 10;
 
-// - 10 lollipops generate 1 candy per second.
-//   - Use the 🍭 emoji to display the lollipops you have
-// - Display the candy producton rate in the `Candies / Second` row
+document.querySelector('.create-candies').addEventListener('click', () => addCandy());
 
-setInterval(() => {
-  const lollyNum = document.querySelector('.lollypops').textContent.length / 2;
-  let productRate = parseInt(lollyNum / 10, 10);
-  productRate *= boost;
-
-  for (let i = 0; i < productRate; i += 1) {
-    addCandy();
-  }
-  document.querySelector('.speed').textContent = productRate;
-}, 1000);
-
-// - If you press the "make candy rain" button, the candy generation should speed up 10x
 document.querySelector('.candy-machine').addEventListener('click', () => {
   boost *= 10;
 });
+
+document.querySelector('.buy-lollypops').addEventListener('click', () => {
+  if (candyNum >= 100) {
+    candyNum -= 100;
+    candyDisplay.textContent = (candyNum);
+    lollypopsDisplay.textContent += '🍭';
+    lollyNum += 1;
+  }
+});
+
+setInterval(() => {
+  let productRate = Math.floor(lollyNum / 10);
+  productRate *= boost;
+  addCandy(productRate);
+  speedDisplay.textContent = productRate;
+}, 1000);

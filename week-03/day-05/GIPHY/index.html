@@ -1,11 +1,12 @@
 <html>
   <body>
-    <ul class="photoWall"></ul>
+    <ul class="photo-wall"></ul>
     <script>
       'use strict';
 
       const API_KEY = 'ghT1GPqGjdMUbPgVfWTlQSeDSD6F9XVJ';
       const url = `http://api.giphy.com/v1/gifs/search?q=iron+man&api_key=${API_KEY}&limit=16`;
+      const photoWall = document.querySelector('.photo-wall');
 
       function addPhoto(image) {
         const newEle = document.createElement('img');
@@ -13,10 +14,9 @@
         newLi.appendChild(newEle);
         newEle.src = image.fixed_height_still.url;
         newLi.addEventListener('click', (e) => {
-          console.log(image.fixed_height.url);
           e.target.src = image.fixed_height.url;
         });
-        document.querySelector('.photoWall').appendChild(newLi);
+        photoWall.appendChild(newLi);
       }
 
       fetch(url)

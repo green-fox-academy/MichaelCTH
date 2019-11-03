@@ -12,7 +12,7 @@
       function addArticle(article) {
         const head = document.createElement('h1');
         head.textContent = article.headline.main;
-        const date = document.createElement('h4');
+        const date = document.createElement('time');
         date.textContent = article.pub_date;
         const snippet = document.createElement('p');
         snippet.textContent = article.snippet;
@@ -32,9 +32,7 @@
       fetch(URL + API_KEY)
         .then((response) => response.json())
         .then((data) => {
-          data.response.docs.forEach((element) => {
-            addArticle(element);
-          });
+          data.response.docs.forEach(addArticle);
         });
     </script>
   </body>

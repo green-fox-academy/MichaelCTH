@@ -41,7 +41,7 @@ function searchPeople(name) {
     })
     .then((results) => {
       if (results.count === 0) {
-        throw Error('Not Fouind');
+        throw Error('Not Found');
       }
       return results;
     })

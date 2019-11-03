@@ -26,8 +26,7 @@
       });
 
       document.querySelector('button').addEventListener('click', () => {
-        const event = new Event('click');
-        document.querySelector('div').dispatchEvent(event);
+        document.querySelector('div').click();
       });
     </script>
   </body>
