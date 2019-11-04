@@ -1,0 +1,46 @@
+.main {
+  display: flex;
+}
+
+img {
+  width: 180px;
+  float: left;
+  margin: 0 10px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 10px 10px;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+.property-item {
+  width: 450px;
+  border: 1px solid black;
+  margin: 10px 10px;
+}
+
+.property-item::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+label {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.filter-box {
+  width: 200px;
+  border: 1px solid black;
+  margin: 20px 0;
+}
+
+.placeholder {
+  visibility: hidden;
+}

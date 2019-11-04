@@ -9,5 +9,4 @@ const element = <SecondComponent items={['a', 'b', 'c']} />;
 
 ReactDOM.render(element, document.getElementById('react-container'));
 
-
 // alert(element.props.children);
