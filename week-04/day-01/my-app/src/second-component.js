@@ -1,9 +1,10 @@
 import React from 'react';
 
 export default function SecondComponent(props) {
+  const { items } = props;
   return (
     <ul>
-    {props.items.map(item => <li>{item}</li>)}
+      {items.map((item) => <li key={item}>{item}</li>)}
     </ul>
   );
 }
