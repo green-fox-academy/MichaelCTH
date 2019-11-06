@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.API_KEY = '&apiKey=46c4cbcbb3a14713b8472ca99934b311';
-    this.newsUrl = 'https://newsapi.org/v2/top-headlines?country=';
+    this.newsUrl = 'https://newsapi.org/v2/top-headlines?category=technology&pageSize=10&country=';
     this.state = { articles: [], country: null, loader: false };
   }
 
