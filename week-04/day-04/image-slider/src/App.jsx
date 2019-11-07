@@ -41,6 +41,11 @@ function App() {
     }
   }
 
+  function search(val) {
+    setSearchKey(val);
+    setCurImgIdx(0);
+  }
+
   useEffect(() => {
     window.addEventListener('keydown', keyHandler);
     return () => window.removeEventListener('keydown', keyHandler);
@@ -56,13 +61,13 @@ function App() {
   return (
     <>
       <div className="App">
-        <Search setSearchKey={setSearchKey} onClick={() => setImage([])} />
+        <Search setSearchKey={search} onClick={() => setImage([])} />
         <Row>
           <Col span={20} offset={2}>
             <View curImgIdx={curImgIdx} images={images} updateImageIdx={updateImageIdx} />
           </Col>
           <Col span={14} offset={5}>
-            <SnapView images={images} updateImageIdx={updateImageIdx} />
+            <SnapView curImgIdx={curImgIdx} images={images} updateImageIdx={updateImageIdx} />
           </Col>
         </Row>
       </div>
