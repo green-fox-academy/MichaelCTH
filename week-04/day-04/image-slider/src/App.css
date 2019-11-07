@@ -33,9 +33,6 @@ h1 {
 
 .ImgViwer {
   width: 100%;
-
-  opacity: 0;
-  /* background-color: rgba(214, 214, 214, 0.048); */
 }
 
 body {
@@ -89,8 +86,8 @@ footer {
 }
 
 .search-bar {
-  margin-top: 20px;
-  margin-bottom: 50px;
+  padding-top: 20px;
+  padding-bottom: 30px;
 }
 
 .snap-view {
