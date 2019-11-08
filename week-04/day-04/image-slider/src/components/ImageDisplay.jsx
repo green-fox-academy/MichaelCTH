@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 
 export default function ImageDisplay({ curImgIdx, images }) {
   useEffect(() => {
+    console.log(images);
     const parent = document.querySelector('.ImgViwer');
     const child = document.querySelector('.ImgViwer img');
     parent.removeChild(child);
@@ -14,7 +15,9 @@ export default function ImageDisplay({ curImgIdx, images }) {
   return (
     <div className="ImgViwer content">
       <img />
-      <div className="content-overlay" />
+      <a href={images[curImgIdx].urls.full} target="_blank">
+        <div className="content-overlay" />
+      </a>
       <div className="content-details fadeIn-bottom">
         <h3 className="content-title">{images[curImgIdx].alt_description}</h3>
       </div>
