@@ -4,20 +4,19 @@ import {
 } from 'antd';
 
 export default function Search({ setSearchKey, onClick }) {
-  function onInputChange(e) {
-    setSearchKey(e.target.value);
+  function goSearch() {
+    const val = document.querySelector('.search-input-box').value;
+    setSearchKey(val);
+    onClick();
   }
 
   return (
     <Row className="search-bar">
       <Col span={6} offset={8}>
-        <Input placeholder="Ex. Halloween" onChange={onInputChange} size="large" />
+        <Input className="search-input-box" placeholder="Ex. Halloween" size="large" />
       </Col>
-      {/* <Col span={1}>
-        <Switch checkedChildren="JPG" unCheckedChildren="MP4" defaultChecked />
-      </Col> */}
       <Col span={1}>
-        <Button icon="search" onClick={onClick} size="large">
+        <Button icon="search" onClick={goSearch} size="large">
           Search
         </Button>
       </Col>
