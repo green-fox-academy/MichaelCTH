@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 export default function ImageDisplay({ curImgIdx, images }) {
   useEffect(() => {
     console.log(images);
-    const parent = document.querySelector('.ImgViwer');
-    const child = document.querySelector('.ImgViwer img');
+    const parent = document.querySelector('.ImgViwer a');
+    const child = document.querySelector('.ImgViwer a img');
     parent.removeChild(child);
     const newElement = document.createElement('img');
     newElement.src = images[curImgIdx].urls.regular;
@@ -14,13 +14,9 @@ export default function ImageDisplay({ curImgIdx, images }) {
   });
   return (
     <div className="ImgViwer content">
-      <img />
       <a href={images[curImgIdx].urls.full} target="_blank">
-        <div className="content-overlay" />
+        <img />
       </a>
-      <div className="content-details fadeIn-bottom">
-        <h3 className="content-title">{images[curImgIdx].alt_description}</h3>
-      </div>
     </div>
   );
 }
