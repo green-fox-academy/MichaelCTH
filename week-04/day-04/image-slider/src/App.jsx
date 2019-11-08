@@ -71,7 +71,7 @@ function App() {
           </Col>
         </Row>
       </div>
-      <footer>Hello</footer>
+      <footer>Michael Chen @ EPAM</footer>
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Icon } from 'antd';
 
 export default function LeftControl({ curImgIdx, updateImageIdx }) {
   return (
-    <div>
+    <div className="control-arrow">
       <Icon
         type="left"
         style={{ fontSize: '32px' }}
