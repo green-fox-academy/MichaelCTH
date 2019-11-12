@@ -34,7 +34,9 @@ class App extends Component {
 
   submitHandler(e) {
     e.preventDefault();
-    const { firstName, lastName, age, gender, location, restrictions } = this.state;
+    const {
+ firstName, lastName, age, gender, location, restrictions 
+} = this.state;
     let output = '';
     output += `First name: ${firstName}\n`;
     output += `Last name: ${lastName}\n`;
@@ -85,6 +87,7 @@ class App extends Component {
 
           <section>
             <label htmlFor="gender">Gender: </label>
+            <br />
             <input
               type="radio"
               name="gender"
@@ -93,6 +96,7 @@ class App extends Component {
               defaultChecked
             />
             Male
+            <br />
             <input type="radio" name="gender" value="Female" onChange={this.formChangeHandler} />
             Female
           </section>
