@@ -34,6 +34,7 @@ class App extends Component {
           <label htmlFor="firstName">
             First Name:
             <input
+              type="text"
               name="firstName"
               value={firstName}
               placeholder="First Name"
@@ -44,6 +45,7 @@ class App extends Component {
           <label htmlFor="lastName">
             Last Name:
             <input
+              type="text"
               name="lastName"
               value={lastName}
               placeholder="Last Name"
@@ -54,6 +56,7 @@ class App extends Component {
           <label htmlFor="email">
             Email:
             <input
+              type="email"
               name="email"
               value={email}
               placeholder="Email"

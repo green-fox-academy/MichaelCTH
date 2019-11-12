@@ -1,0 +1,20 @@
+.App {
+  text-align: right;
+  width: 350px;
+}
+
+label {
+  display: block;
+  margin: 20px 20px;
+}
+
+input {
+  margin-left: 20px;
+  font-size: 14px;
+  width: 160px;
+}
+
+input[type='submit'] {
+  margin-right: 60px;
+  width: 100px;
+}
