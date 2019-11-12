@@ -1,0 +1,22 @@
+form {
+  text-align: left;
+  margin: 10px 10px;
+}
+
+section {
+  margin-top: 15px;
+}
+
+input {
+  margin: 5px 20px;
+}
+
+textarea {
+  width: 200px;
+  height: 80px;
+  resize: none;
+}
+
+.order-summary {
+  margin: 10px 10px;
+}
