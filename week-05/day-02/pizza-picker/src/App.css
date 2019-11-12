@@ -1,22 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.App {
+  width: 350px;
+  margin: 20px auto;
+  background-color: white;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+h1 {
+  font-size: 26px;
+  color: gray;
+}
+
 form {
   text-align: left;
-  margin: 10px 10px;
+  margin: 20px 10px;
+  font-size: 18px;
 }
 
 section {
   margin-top: 15px;
+  font-size: 18px;
 }
 
+select {
+  margin-left: 14px;
+  font-size: 16px;
+}
 input {
-  margin: 5px 20px;
+  margin: 5px 10px;
+}
+
+input[type='submit'] {
+  font-size: 20px;
+  width: 80px;
 }
 
 textarea {
   width: 200px;
   height: 80px;
   resize: none;
+  font-size: 16px;
 }
 
 .order-summary {
-  margin: 10px 10px;
+  padding: 20px 20px;
 }

@@ -32,8 +32,7 @@ class App extends Component {
     }
   }
 
-  submitHandler(e) {
-    e.preventDefault();
+  alertState() {
     const {
  firstName, lastName, age, gender, location, restrictions 
 } = this.state;
@@ -47,62 +46,70 @@ class App extends Component {
     alert(output);
   }
 
+  submitHandler(e) {
+    e.preventDefault();
+    this.alertState();
+  }
+
   render() {
     const { firstName, lastName, age } = this.state;
     return (
       <div className="App">
+        <h1>Book Your Travel Now</h1>
         <form onSubmit={this.submitHandler}>
           <section>
-            <label htmlFor="firstName">First Name: </label>
             <input
               type="text"
               name="firstName"
               value={firstName}
               onChange={this.formChangeHandler}
+              placeholder="First Name"
               required
             />
           </section>
 
           <section>
-            <label htmlFor="lastName">Last Name: </label>
             <input
               type="text"
               name="lastName"
               value={lastName}
               onChange={this.formChangeHandler}
+              placeholder="Last Name"
               required
             />
           </section>
 
           <section>
-            <label htmlFor="age">Age: </label>
             <input
               type="number"
               name="age"
               value={age}
               onChange={this.formChangeHandler}
+              placeholder="Ex. 24"
               required
             />
           </section>
 
           <section>
             <label htmlFor="gender">Gender: </label>
-            <br />
-            <input
-              type="radio"
-              name="gender"
-              value="Male"
-              onChange={this.formChangeHandler}
-              defaultChecked
-            />
-            Male
-            <br />
-            <input type="radio" name="gender" value="Female" onChange={this.formChangeHandler} />
-            Female
+            <spam>
+              <input
+                type="radio"
+                name="gender"
+                value="Male"
+                onChange={this.formChangeHandler}
+                defaultChecked
+              />
+              Male
+            </spam>
+            <spam>
+              <input type="radio" name="gender" value="Female" onChange={this.formChangeHandler} />
+              Female
+            </spam>
           </section>
 
           <section>
-            <label htmlFor="location">Location</label>
+            <label htmlFor="location">Location:</label>
             <select name="location" onChange={this.formChangeHandler} required>
               <option value="Florida">Florida</option>
               <option value="Vegas">Vegas</option>
@@ -113,15 +120,18 @@ class App extends Component {
           <section>
             <label htmlFor="restrictions">Restrictions: </label>
             <br />
-            <input type="checkbox" name="Vegetarian" onChange={this.formChangeHandler} />
-            Vegetarian
-            <br />
-            <input type="checkbox" name="Kosher" onChange={this.formChangeHandler} />
-            Kosher
-            <br />
-            <input type="checkbox" name="Lactose Free" onChange={this.formChangeHandler} />
-            Lactose Free
-            <br />
+            <spam>
+              <input type="checkbox" name="Vegetarian" onChange={this.formChangeHandler} />
+              Vegetarian
+            </spam>
+            <spam>
+              <input type="checkbox" name="Kosher" onChange={this.formChangeHandler} />
+              Kosher
+            </spam>
+            <spam>
+              <input type="checkbox" name="Lactose Free" onChange={this.formChangeHandler} />
+              Lactose Free
+            </spam>
           </section>
           <input type="submit" value="Submit" />
         </form>

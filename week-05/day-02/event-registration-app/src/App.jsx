@@ -29,48 +29,45 @@ class App extends Component {
     // eslint-disable-next-line object-curly-newline
     const { firstName, lastName, email, list } = this.state;
     return (
-      <div>
+      <div className="App">
+        <h1>Join Our Event</h1>
         <form onSubmit={this.submitHandler}>
-          <label htmlFor="firstName">
-            First Name:
-            <input
-              type="text"
-              name="firstName"
-              value={firstName}
-              placeholder="First Name"
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
-          <label htmlFor="lastName">
-            Last Name:
-            <input
-              type="text"
-              name="lastName"
-              value={lastName}
-              placeholder="Last Name"
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
-          <label htmlFor="email">
-            Email:
-            <input
-              type="email"
-              name="email"
-              value={email}
-              placeholder="Email"
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
+          <input
+            type="text"
+            name="firstName"
+            value={firstName}
+            placeholder="First Name"
+            onChange={this.formChangeHandler}
+            required
+          />
+          <input
+            type="text"
+            name="lastName"
+            value={lastName}
+            placeholder="Last Name"
+            onChange={this.formChangeHandler}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            value={email}
+            placeholder="Email"
+            onChange={this.formChangeHandler}
+            required
+          />
           <input type="submit" value="Submit" />
         </form>
 
-        {list.length === 0 ? null : <h1>Submission Result</h1>}
+        {list.length === 0 ? null : (
+          <>
+            <hr />
+            <h1>Submission Result</h1>
+          </>
+        )}
         <ul>
           {list.map((item) => (
-            <li>{item}</li>
+            <li key={item}>{item}</li>
           ))}
         </ul>
       </div>

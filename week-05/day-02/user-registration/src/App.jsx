@@ -31,7 +31,8 @@ class App extends Component {
 
   submitHandler(e) {
     e.preventDefault();
-    console.log(this.state);
+    const { username, emailAddress, password } = this.state;
+    console.log({ username, emailAddress, password });
   }
 
   render() {
@@ -40,41 +41,39 @@ class App extends Component {
 } = this.state;
     return (
       <div className="App">
+        <h1>Sign Up</h1>
         <form onSubmit={this.submitHandler}>
-          <label htmlFor="username">
-            Username:
-            <input
-              type="text"
-              name="username"
-              value={username}
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
-          <label htmlFor="emailAddress">
-            Email:
-            <input
-              type="email"
-              name="emailAddress"
-              value={emailAddress}
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
-          <label htmlFor="password">
-            Password:
-            <input
-              type="password"
-              name="password"
-              value={password}
-              onChange={this.formChangeHandler}
-              required
-            />
-          </label>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            onChange={this.formChangeHandler}
+            placeholder="username"
+            required
+          />
+
+          <input
+            type="email"
+            name="emailAddress"
+            value={emailAddress}
+            onChange={this.formChangeHandler}
+            placeholder="email"
+            required
+          />
+
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={this.formChangeHandler}
+            placeholder="password"
+            required
+          />
+
           <input
             disabled={!nameValid || !emailValid || !passwordValid}
             type="submit"
-            value="Submit"
+            value="Sign Up"
           />
         </form>
       </div>

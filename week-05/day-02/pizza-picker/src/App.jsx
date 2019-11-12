@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { Component } from 'react';
 import './App.css';
+import imgURL from './pizza.png';
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +20,6 @@ class App extends Component {
 
   formChangeHandler(e) {
     const { name, value, type } = e.target;
-    if (type === 'select-one') {
-      this.setState({ base: value });
-    }
 
     if (type === 'checkbox') {
       let { toppings } = this.state;
@@ -30,21 +28,14 @@ class App extends Component {
         toppings.push(name);
       }
       this.setState({ toppings });
-    }
-
-    if (type === 'radio') {
-      this.setState({ cut: value });
-    }
-
-    if (type === 'textarea') {
-      this.setState({ comment: value });
+    } else {
+      this.setState({ [name]: value });
     }
   }
 
   submitHandler(e) {
     e.preventDefault();
     this.setState({ display: true });
-    console.log(this.state);
   }
 
   render() {
@@ -53,6 +44,8 @@ class App extends Component {
 } = this.state;
     return (
       <div className="App">
+        <img src={imgURL} alt="pizza" width="200px" />
+        <h1>Create Your Own Pizza Now</h1>
         <form onSubmit={this.submitHandler}>
           <section>
             <label htmlFor="base">Base:</label>
@@ -109,18 +102,23 @@ class App extends Component {
         </form>
         {display ? (
           <div className="order-summary">
+            <hr />
             <h1>Order Summary</h1>
-            <p>Base: {base}</p>
             <p>
-              Toppings:
-              <ul>
-                {toppings.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <strong>Base: </strong> {base}
             </p>
-            <p>Cut ?: {cut}`</p>
-            <p>Comment: {comment}</p>
+            <p>
+              <strong>Toppings: </strong>
+              {toppings.map((item) => (
+                <spam key={item}>{item},</spam>
+              ))}
+            </p>
+            <p>
+              <strong>Cut ?: </strong> {cut}
+            </p>
+            <p>
+              <strong>Comment: </strong> {comment}
+            </p>
           </div>
         ) : null}
       </div>
