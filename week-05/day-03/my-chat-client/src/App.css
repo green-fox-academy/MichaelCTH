@@ -1,0 +1,64 @@
+body {
+  background-color: #faaca8;
+  background-image: linear-gradient(315deg, #faaca8 0%, #ddd6f3 50%, #ffffff 100%);
+}
+
+.App {
+  width: 80vw;
+  margin: 50px auto;
+  box-shadow: 5px 5px 20px 3px #888888;
+  border-radius: 10px;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+  background-color: rgb(243, 243, 243);
+}
+
+.chat-window {
+  background-color: rgb(243, 243, 243);
+  width: 100%;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+section {
+  margin: 20px 10px;
+}
+
+section span {
+  color: gray;
+  font-size: 12px;
+}
+
+section p {
+  background-color: white;
+  display: inline-block;
+  padding: 15px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.input-box {
+  height: 8vh;
+  display: flex;
+}
+
+.input-box textarea {
+  width: 90vw;
+  height: 94%;
+  resize: none;
+  font-size: 16px;
+  border: 0;
+  background-color: rgb(250, 246, 246);
+}
+
+.input-box input {
+  height: 100%;
+  width: 10vw;
+  border: 0;
+  background-color: rgb(176, 228, 110);
+  color: white;
+  font-size: 30px;
+}
