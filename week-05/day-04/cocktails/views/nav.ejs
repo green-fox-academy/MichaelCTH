@@ -1,0 +1,8 @@
+<nav class="navbar">
+  <ul>
+    <li><a href="/">All</a></li>
+    <% alcoholList.forEach((item)=>{ %>
+    <li><a href="/?alcohol=<%= item %>"><%= item.toUpperCase() %></a></li>
+    <% }) %>
+  </ul>
+</nav>
