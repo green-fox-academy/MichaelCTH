@@ -1,0 +1,24 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" />
+    <link href="/static/style.css" rel="stylesheet" />
+    <title>Weather <%= city.city %></title>
+  </head>
+  <body>
+    <div class="detail panel">
+      <h1><%= city.city %></h1>
+      <div>
+        <% city.weather.forEach( (day)=> { %>
+        <section>
+          <img src="/static/icons/<%= day.icon %>.png"></img>
+          <p><%= day.temp %>°C</p>
+          <p><%= day.message %></p>
+        </section>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>

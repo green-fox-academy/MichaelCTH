@@ -1,0 +1,76 @@
+* {
+  font-family: 'Lato', sans-serif;
+  color: rgb(56, 73, 92);
+}
+
+a {
+  text-decoration: none;
+}
+
+.panel {
+  background-color: rgb(235, 239, 240);
+  margin: 30px auto;
+  padding: 5px 10px;
+}
+
+.dash {
+  width: 500px;
+}
+
+.dash section {
+  background-color: white;
+  margin: 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  width: 250px;
+}
+
+span {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.degree {
+  font-size: 40px;
+  width: 80px;
+  text-align: right;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+}
+
+.detail {
+  width: 900px;
+}
+
+.detail div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.detail section {
+  background-color: white;
+  margin: 20px 10px;
+  border-radius: 10px;
+  width: 200px;
+  height: 220px;
+  text-align: center;
+}
+
+.detail section img {
+  width: 120px;
+  height: 120px;
+}
+
+.detail section p:nth-child(2) {
+  margin: 5px 0;
+  font-size: 25px;
+}

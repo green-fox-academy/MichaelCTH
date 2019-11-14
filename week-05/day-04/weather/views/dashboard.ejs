@@ -1,0 +1,23 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet" />
+    <link href="/static/style.css" rel="stylesheet" />
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <div class="dash panel">
+      <% forecasts.forEach( (city)=> { %>
+      <a href="/cities/<%= city.city %>">
+      <section>
+        <h1><%= city.city %><br /><span><%= city.location %></span></h1>
+        <p class="degree"><%= city.weather[0].temp %>°C</p>
+        <img src="/static/icons/<%= city.weather[0].icon %>.png"></img>
+      </section>
+        </a>  
+      <% }) %>
+    </div>
+  </body>
+</html>
