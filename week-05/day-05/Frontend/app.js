@@ -27,7 +27,7 @@ app.get('/greeter', (req, res) => {
   const { name, title } = req.query;
   if (name && title) {
     res.json({
-      welcome_message: 'Oh, hi there petike, my dear student!',
+      welcome_message: `Oh, hi there ${name}, my dear ${title}!`,
     });
   } else if (name) {
     res.json({ error: 'Please provide a title!' });
@@ -87,6 +87,34 @@ app.post('/arrays', (req, res) => {
       resContent = { error: 'Please provide what to do with the numbers!' };
   }
   res.json(resContent);
+});
+
+const sith = (text) => {
+  const words = text.split(' ');
+  for (let i = 0; i < words.length - 1; i += 1) {
+    if (words[i].indexOf('.') > -1) {
+      words[i] += ' Uhmm.';
+    } else if (words[i + 1].indexOf('.') < 0) {
+      [words[i], words[i + 1]] = [words[i + 1], words[i]];
+      if (words[i + 1][0] === words[i + 1][0].toUpperCase()) {
+        words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+        words[i + 1] = words[i + 1][0].toLowerCase() + words[i + 1].slice(1);
+      }
+      i += 1;
+    }
+  }
+  return `${words.join(' ')} Err..err.err.`;
+};
+
+app.post('/sith', (req, res) => {
+  const { text } = req.body;
+  if (text) {
+    res.json({ sith_text: sith(text) });
+  } else {
+    res.json({
+      error: 'Feed me some text you have to, padawan young you are. Hmmm.',
+    });
+  }
 });
 
 app.listen(PORT, () => {
