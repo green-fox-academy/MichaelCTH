@@ -117,6 +117,31 @@ app.post('/sith', (req, res) => {
   }
 });
 
+const chars = ['a', 'o', 'u', 'e', 'y', 'i'];
+const translate = (text) => {
+  let charArray = text.split('');
+  charArray = charArray.map((c) => {
+    if (chars.indexOf(c) > -1) {
+      return `${c}l${c}`;
+    }
+    return c;
+  });
+  return charArray.join('');
+};
+app.post('/translate', (req, res) => {
+  const { text, lang } = req.body;
+  if (text) {
+    res.json({
+      translated: translate(text),
+      lang: 'gibberish',
+    });
+  } else {
+    res.json({
+      error: "I can't translate that!",
+    });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`The server is up and running on ${PORT}`);
 });
