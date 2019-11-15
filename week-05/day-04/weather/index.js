@@ -73,7 +73,7 @@ app.get('/cities/:name', (req, res) => {
   const cityName = req.params.name;
   const cities = forecasts.filter((item) => item.city === cityName);
   if (cities.length !== 1) {
-    res.send('404');
+    res.sendStatus(404);
   } else {
     const city = cities[0];
     res.render('details', { city });
