@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateInputMessage, sendMessage } from '../redux/actionCreater';
+import { updateInputMessage, sendMessage, loadHisChatMessage } from '../redux/actionCreater';
 
 export default function InputMessage() {
   const inputMessage = useSelector((state) => state.inputMessage);
@@ -12,11 +12,14 @@ export default function InputMessage() {
   return (
     <div className="input-box">
       <textarea value={inputMessage} onChange={changeHandler}></textarea>
-      <input
-        type="submit"
-        value="Send"
-        onClick={() => dispatch(sendMessage('Michael', inputMessage))}
-      />
+      <div className="input-box-right">
+        <input
+          type="submit"
+          value="Send"
+          onClick={() => dispatch(sendMessage('Michael', inputMessage))}
+        />
+        <input type="submit" value="Update" onClick={() => dispatch(loadHisChatMessage())} />
+      </div>
     </div>
   );
 }
