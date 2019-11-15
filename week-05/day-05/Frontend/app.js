@@ -45,7 +45,6 @@ app.get('/appenda/:appendable', (req, res) => {
 
 const factorial = (n) => ((n !== 1) ? n * factorial(n - 1) : 1);
 
-
 app.post('/dountil/:action', (req, res) => {
   let { until } = req.body;
   until = parseInt(until, 10);
@@ -69,6 +68,25 @@ app.post('/dountil/:action', (req, res) => {
       error: 'Please provide a number!',
     });
   }
+});
+
+app.post('/arrays', (req, res) => {
+  const { what, numbers } = req.body;
+  let resContent = null;
+  switch (what) {
+    case 'sum':
+      resContent = { result: numbers.reduce((pre, next) => pre + next) };
+      break;
+    case 'multiply':
+      resContent = { result: numbers.reduce((pre, next) => pre * next) };
+      break;
+    case 'double':
+      resContent = { result: numbers.map((val) => val * 2) };
+      break;
+    default:
+      resContent = { error: 'Please provide what to do with the numbers!' };
+  }
+  res.json(resContent);
 });
 
 app.listen(PORT, () => {
