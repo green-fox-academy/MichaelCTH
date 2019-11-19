@@ -1,0 +1,16 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookstore</title>
+  </head>
+  <body>
+    <h1>Book Titles</h1>
+    <ul>
+      <% result.forEach((item) => { %>
+      <li><%= item.book_name %></li>
+      <% });%>
+    </ul>
+  </body>
+</html>
