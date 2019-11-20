@@ -1,4 +1,5 @@
 const wrapper = (res) => ({
+  ...res,
   status: (code) => {
     res.statusCode = code;
   },

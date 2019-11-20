@@ -11,6 +11,7 @@ const wrapper = (req, body) => {
   });
 
   return {
+    ...req,
     params: queryObj,
     query: reqUrl.query,
     body: JSON.parse(body),
