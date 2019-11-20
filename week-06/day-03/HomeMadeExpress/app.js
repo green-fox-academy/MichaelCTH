@@ -5,12 +5,12 @@ const PORT = 3000;
 const app = fakeExpress();
 
 app.get('/', (req, res) => {
-  res.set('CTH', 'Michael');
+  res.set('It-Is-A-Header', 'Michael');
   res.send('Everything is OK');
 });
 
 app.post('/', (req, res) => {
-  res.end('Post Hello');
+  res.send('Post Hello');
 });
 
 app.get('/my-endpoint/variable', (req, res) => {
